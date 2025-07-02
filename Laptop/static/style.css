@@ -1,0 +1,198 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background and wrapper styling */
+body {
+    background: linear-gradient(120deg, #e4e9e8 0%, #495073 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: bgMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Main container */
+.wrapper {
+    background: rgba(255,255,255,0.95);
+    padding: 48px 36px;
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18), 0 1.5px 4px rgba(116,235,213,0.12);
+    width: 100%;
+    max-width: 520px;
+    animation: fadeInUp 1.2s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title styling */
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    color: #3a3a3a;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+    background: linear-gradient( #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s linear infinite alternate;
+}
+
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Form styling */
+.form .inputfield {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeInField 0.8s forwards;
+}
+
+.form .inputfield:nth-child(1) { animation-delay: 0.2s; }
+.form .inputfield:nth-child(2) { animation-delay: 0.4s; }
+.form .inputfield:nth-child(3) { animation-delay: 0.6s; }
+.form .inputfield:nth-child(4) { animation-delay: 0.8s; }
+.form .inputfield:nth-child(5) { animation-delay: 1s; }
+
+@keyframes fadeInField {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(30px); }
+}
+
+/* Label styling */
+.inputfield label {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 7px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.inputfield label:hover {
+    color: #2414b4;
+}
+
+/* Input and select styling */
+.input, select {
+    padding: 12px 16px;
+    border: 1.5px solid #d1d1d1;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    font-size: 15px;
+    background: #f7fafd;
+    box-shadow: 0 1px 2px rgba(116,235,213,0.07);
+}
+
+.input:focus, select:focus {
+    border-color: #25064a;
+    box-shadow: 0 0 12px rgba(116, 235, 213, 0.25);
+    background: #e9f7f6;
+}
+
+/* Custom select wrapper */
+.custom_select {
+    position: relative;
+}
+
+/* Checkboxes */
+.check {
+    display: flex;
+    justify-content: space-between;
+    margin: 22px 0;
+    animation: fadeInField 1.2s 1.2s forwards;
+    opacity: 0;
+}
+
+.check div {
+    display: flex;
+    align-items: center;
+}
+
+.check label {
+    margin-right: 8px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.check label:hover {
+    color: #4ac4b3;
+}
+
+input[type="checkbox"] {
+    accent-color: #74ebd5;
+    width: 18px;
+    height: 18px;
+    transition: box-shadow 0.2s;
+}
+
+input[type="checkbox"]:focus {
+    box-shadow: 0 0 6px #74ebd5;
+}
+
+/* Submit button */
+.btn {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    background: linear-gradient( #090b75 100%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(74, 196, 179, 0.13);
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    animation: fadeInUp 1.5s 1.5s both;
+}
+
+.btn:hover {
+    background: linear-gradient( #0c071b 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(74, 196, 179, 0.18);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 28px 10px;
+        border-radius: 14px;
+    }
+    .title {
+        font-size: 24px;
+    }
+    .btn {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+}
+
